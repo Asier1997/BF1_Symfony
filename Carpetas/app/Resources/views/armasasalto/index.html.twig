@@ -1,0 +1,43 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosIndexAsalto %}
+    <h1>Lista de las armas del Asalto</h1>
+
+    <table border="solid black 2px">
+        <thead>
+            <tr>
+                <th>Arma</th>
+                <th>Dmg</th>
+                <th>Cargador</th>
+                <th>Id</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for armasAsalto in armasAsaltos %}
+            <tr>
+                <td>{{ armasAsalto.arma }}</td>
+                <td>{{ armasAsalto.dmg }}</td>
+                <td>{{ armasAsalto.cargador }}</td>
+                <td>{{ armasAsalto.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('armasasalto_show', { 'id': armasAsalto.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('armasasalto_edit', { 'id': armasAsalto.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasasalto_new') }}">Añadir nueva arma para el Asalto</a>
+        </li>
+    </ul>
+{% endblock %}

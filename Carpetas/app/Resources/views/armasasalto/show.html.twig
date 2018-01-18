@@ -1,0 +1,40 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosShowAsalto %}
+    <h1>Mostrando arma del Asalto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Arma</th>
+                <td>{{ armasAsalto.arma }}</td>
+            </tr>
+            <tr>
+                <th>Dmg</th>
+                <td>{{ armasAsalto.dmg }}</td>
+            </tr>
+            <tr>
+                <th>Cargador</th>
+                <td>{{ armasAsalto.cargador }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ armasAsalto.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasasalto_index') }}">Volver a la lista de las armas del Asalto</a>
+        </li>
+        <li>
+            <a href="{{ path('armasasalto_edit', { 'id': armasAsalto.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Eliminar">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

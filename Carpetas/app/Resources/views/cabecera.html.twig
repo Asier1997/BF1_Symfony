@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Battlefield_1{% endblock %}</title>
+   
+        {% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('build/css/mystile.css')}}"/>
+        {% endblock %}
+<img src="{{asset('build/images/Cabezera_Edit.jpg')}}"/>
+    </head>
+    <body style="background-image:url('{{asset('build/images/Fondo_de_la_pagina.jpg')}}')" onload="mueveReloj()">
+        {% block body %}
+
+<div class="container">
+    <a href="{{path('inicio')}}">Inicio</a>
+    <div class="dropdown">
+     <button class="dropbtn" name="Clase">Clases</button>
+      <div class="dropdown-content">
+       <a href="{{path('asalto')}}">Asalto</a>
+       <a href="{{path('medico')}}">Médico</a>
+       <a href="{{path('apoyo')}}">Apoyo</a>
+       <a href="{{path('explorador')}}">Explorador</a>
+      </div>
+    </div>
+    	<a href="{{path('vehiculos')}}">Vehiculos</a>
+    <div class="dropdown">
+     <button class="dropbtn" name="Clase">Armas</button>
+      <div class="dropdown-content">
+       <a href="/armasmedico">Armas Médico</a>
+       <a href="/armasapoyo">Armas Apoyo</a>
+       <a href="/armasasalto">Armas Asalto</a>
+       <a href="/armasexplorador">Armas Explorador</a>
+      </div>
+    </div>
+</div>
+        {% endblock %}
+        
+        {% block javascripts %}
+<script language="JavaScript"> 
+function mueveReloj()
+{ 
+   	momentoActual = new Date(); 
+   	hora = momentoActual.getHours(); 
+   	minuto = momentoActual.getMinutes(); 
+   	segundo = momentoActual.getSeconds(); 
+
+   	horaImprimible = hora + " : " + minuto + " : " + segundo;
+
+   	document.form_reloj.reloj.value = horaImprimible; 
+
+   	setTimeout("mueveReloj()",1000); 
+} 
+</script> 
+
+<form name="form_reloj"> 
+<input type="text" name="reloj" size="10"> 
+</form> 
+        {% endblock %}
+        
+
+        {% block textoInicio %}
+            
+        {% endblock %}
+        
+        {% block textoAsalto %}
+
+        {% endblock %}
+        
+        {% block textoApoyo %}
+
+        {% endblock %}
+        
+        {% block textoMedico %}
+
+        {% endblock %}
+        
+        {% block textoExplorador %}
+
+        {% endblock %}
+        
+        {% block textoVehiculos %}
+
+        {% endblock %}
+
+        {% block sidebarVehiculos %}
+
+        {% endblock %}
+        
+        {% block armasapoyo %}
+            
+        {% endblock %}
+        
+        {% block armasasalto %}
+        
+        {% endblock %}
+        
+        {% block armasexplorador %}
+        
+        {% endblock %}
+        
+        {% block armasmedico %}
+            
+        {% endblock %}
+        
+        {% block datosApoyo %}
+        
+        {% endblock %}
+        
+        {% block datosNuevoApoyo %}
+        
+        {% endblock %}
+        
+        {% block datosShowApoyo %}
+        
+        {% endblock %}
+        
+        {% block datosEditApoyo %}
+        
+        {% endblock %}
+        
+        {% block datosShowAsalto %}
+        
+        {% endblock %}
+        
+        {% block datosNewAsalto %}
+        
+        {% endblock %}
+        
+        {% block datosEditAsalto %}
+        
+        {% endblock %}
+        
+        {% block datosIndexAsalto %}
+        
+        {% endblock %}
+        
+        {% block datosEditExplorador %}
+        
+        {% endblock %}
+        
+        {% block datosIndexExplorador %}
+        
+        {% endblock %}
+        
+        {% block datosNewExplorador %}
+        
+        {% endblock %}
+        
+        {% block datosShowExplorador %}
+        
+        {% endblock %}
+        
+        {% block datosIndexMedico %}
+        
+        {% endblock %}
+        
+		{% block datosNewMedico %}
+		
+		{% endblock %}
+		
+		{% block datosShowMedico %}
+		
+		{% endblock %}
+    </body>
+</html>

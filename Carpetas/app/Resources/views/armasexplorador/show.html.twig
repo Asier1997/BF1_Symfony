@@ -1,0 +1,40 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosShowExplorador %}
+    <h1>Mostrando arma del Explorador</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Arma</th>
+                <td>{{ armasExplorador.arma }}</td>
+            </tr>
+            <tr>
+                <th>Dmg</th>
+                <td>{{ armasExplorador.dmg }}</td>
+            </tr>
+            <tr>
+                <th>Cargador</th>
+                <td>{{ armasExplorador.cargador }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ armasExplorador.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasexplorador_index') }}">Volver a la lista de las armas del Explorador</a>
+        </li>
+        <li>
+            <a href="{{ path('armasexplorador_edit', { 'id': armasExplorador.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Eliminar">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

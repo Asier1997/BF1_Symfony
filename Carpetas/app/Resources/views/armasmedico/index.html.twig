@@ -1,0 +1,43 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosIndexMedico %}
+    <h1>Lista de armas del Médico</h1>
+
+    <table border="solid black 2px">
+        <thead>
+            <tr>
+                <th>Arma</th>
+                <th>Dmg</th>
+                <th>Cargador</th>
+                <th>Id</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for armasMedico in armasMedicos %}
+            <tr>
+                <td>{{ armasMedico.arma }}</td>
+                <td>{{ armasMedico.dmg }}</td>
+                <td>{{ armasMedico.cargador }}</td>
+                <td>{{ armasMedico.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('armasmedico_show', { 'id': armasMedico.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('armasmedico_edit', { 'id': armasMedico.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasmedico_new') }}">Añadir nueva arma al Médico</a>
+        </li>
+    </ul>
+{% endblock %}

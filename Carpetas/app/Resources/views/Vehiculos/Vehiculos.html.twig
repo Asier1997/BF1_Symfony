@@ -1,0 +1,77 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block textoVehiculos %}
+<br>Aquí encontraras una breve descripción de los vehículos que encontraras en el juego</br>
+<br>Camión de artillería: Es un vehículos con una torreta montada en la parte de atrás. Tiene mucha potencia de fuego, pero tiene un blindaje ligero que lo</br>
+<br>vuelve bastante débil a corto alcance</br>
+<br></br>
+<br>Tanque de tierra: Un tanque con una potencia de fuego moderado, capaz de defenderse desde todas las direcciones pero muy lento. Es capaz de romper las</br>
+<br>líneas enemigos, pero muy vulnerable a emboscadas</br>
+<br></br>
+<br>Tanque ligero: Un tanque con mucha movilidad pero una potencia de fuego bajo. Sirve para flanquear a los enemigos y pillarlos desprevenidos</br>
+<br></br>
+{% endblock %}
+
+{% block sidebarVehiculos %}
+<link rel="stylesheet" type="text/css" href="{{asset('build/css/mystile2.css')}}"/>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="{{asset('build/images/Artilleria_edit.jpg')}}" style="width:100%"/>
+  <div class="text">Camión de Artillería</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="{{asset('build/images/Tierra_edit.jpg')}}" style="width:100%"/>
+  <div class="text">Tanque de tierra</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="{{asset('build/images/Ligero_edit.jpg')}}" style="width:100%"/>
+  <div class="text">Tanque Ligero</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+{% endblock %}

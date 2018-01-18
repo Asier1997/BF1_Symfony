@@ -1,0 +1,16 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosNuevoApoyo %}
+    <h1>Añadir arma para el Apoyo</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Añadir" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('armasapoyo_index') }}">Volver a la lista de armas del Apoyo</a>
+        </li>
+    </ul>
+{% endblock %}

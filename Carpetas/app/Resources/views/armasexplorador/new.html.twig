@@ -1,0 +1,16 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosNewExplorador %}
+    <h1>Añadir arma al Explorador</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Añadir" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('armasexplorador_index') }}">Volver a la lista de las armas del Explorador</a>
+        </li>
+    </ul>
+{% endblock %}

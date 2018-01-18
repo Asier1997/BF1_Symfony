@@ -1,0 +1,40 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosShowApoyo %}
+    <h1>ArmasApoyo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Arma</th>
+                <td>{{ armasApoyo.arma }}</td>
+            </tr>
+            <tr>
+                <th>Dmg</th>
+                <td>{{ armasApoyo.dmg }}</td>
+            </tr>
+            <tr>
+                <th>Cargador</th>
+                <td>{{ armasApoyo.cargador }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ armasApoyo.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasapoyo_index') }}">Volver a la lista de armas del Apoyo</a>
+        </li>
+        <li>
+            <a href="{{ path('armasapoyo_edit', { 'id': armasApoyo.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Eliminar">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

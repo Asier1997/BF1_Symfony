@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: Battlefield_1
+    database_user: asier19
+    database_password: Calvo1997
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 6d48294afe57d2cd3dfa1ce4e099a975e74aaae9

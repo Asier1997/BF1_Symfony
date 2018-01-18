@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <title>Vaya! a ocurrido un problema: {{ status_text }}</title>
+    </head>
+    <body>
+        <h1>Parece ser que hay algun problema</h1>
+        <h2>El servidor a retornado"{{ status_code }} {{ status_text }}".</h2>
+
+        <div>
+            Algo esta roto. Dejanos saber el error y intentaremos solucionarlo lo antes posible. Lo sentimos por las molestias causadas.
+        </div>
+    </body>
+</html>

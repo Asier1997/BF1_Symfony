@@ -1,0 +1,43 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosIndexExplorador %}
+    <h1>Lista de armas del Explorador</h1>
+
+    <table border="solid black 2px">
+        <thead>
+            <tr>	
+                <th>Arma</th>
+                <th>Dmg</th>
+                <th>Cargador</th>
+                <th>Id</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for armasExplorador in armasExploradors %}
+            <tr>
+                <td>{{ armasExplorador.arma }}</td>
+                <td>{{ armasExplorador.dmg }}</td>
+                <td>{{ armasExplorador.cargador }}</td>
+                <td>{{ armasExplorador.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('armasexplorador_show', { 'id': armasExplorador.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('armasexplorador_edit', { 'id': armasExplorador.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasexplorador_new') }}">Añadir nueva arma al Explorador</a>
+        </li>
+    </ul>
+{% endblock %}

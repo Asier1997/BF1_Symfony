@@ -1,0 +1,43 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosApoyo %}
+    <h1>Armas del Apoyo</h1>
+
+    <table border="solid black 2px">
+        <thead>
+            <tr>
+                <th>Arma</th>
+                <th>Dmg</th>
+                <th>Cargador</th>
+                <th>Id</th>
+                <th>Accciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for armasApoyo in armasApoyos %}
+            <tr>
+                <td>{{ armasApoyo.arma }}</td>
+                <td>{{ armasApoyo.dmg }}</td>
+                <td>{{ armasApoyo.cargador }}</td>
+                <td>{{ armasApoyo.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('armasapoyo_show', { 'id': armasApoyo.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('armasapoyo_edit', { 'id': armasApoyo.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('armasapoyo_new') }}">Meter nueva arma</a>
+        </li>
+    </ul>
+{% endblock %}

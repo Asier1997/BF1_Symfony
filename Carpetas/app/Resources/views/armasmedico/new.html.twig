@@ -1,0 +1,16 @@
+{% extends 'cabecera.html.twig' %}
+
+{% block datosNewMedico %}
+    <h1>Añadir arma al Médico</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Añadir" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('armasmedico_index') }}">Volver a la lista de armas del Médico</a>
+        </li>
+    </ul>
+{% endblock %}
